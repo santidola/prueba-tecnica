@@ -6,11 +6,11 @@ import type { IntegrationMetadata } from './integration.interface';
 export class BaseIntegrationController {
   constructor(private readonly integrationService: BaseIntegrationService) {}
 
-  // POST /integration
+  
   @Post()
   @HttpCode(HttpStatus.OK)
   async fetchExternal(@Body('metadata') metadata: IntegrationMetadata) {
-    // devolvemos el IntegrationResult tal como lo implementó el servicio
+  
     return this.integrationService.fetchData(metadata);
   }
 }
